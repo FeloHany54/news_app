@@ -11,7 +11,7 @@ class NewsResponse {
     if (json['articles'] != null) {
       articles = <Articles>[];
       json['articles'].forEach((v) {
-        articles!.add(new Articles.fromJson(v));
+        articles!.add(Articles.fromJson(v));
       });
     }
   }
@@ -39,9 +39,7 @@ class Articles {
   });
 
   Articles.fromJson(Map<String, dynamic> json) {
-    source = json['source'] != null
-        ? new Source.fromJson(json['source'])
-        : null;
+    source = json['source'] != null ? Source.fromJson(json['source']) : null;
     author = json['author'];
     title = json['title'];
     description = json['description'];
